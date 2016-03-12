@@ -14,6 +14,11 @@ TicTacToe::TicTacToe()
 	}
 }
 
+void TicTacToe::restart()
+{
+	TicTacToe();
+}
+
 TicTacToe::~TicTacToe()
 {
 }
