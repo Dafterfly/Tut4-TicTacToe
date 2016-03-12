@@ -1,15 +1,22 @@
 #pragma once
+/*
+	Eustacia Rajman
+	214514354
+	ENEL3CC - Computer Methods 3
+	Tut4-TicTacToe
+*/
+
 #include<string>
 
 using namespace std;
 
 class TicTacToe
 {
-
-private:
+	
+	private:
 	char gameBoard[3][3];  //Attribute to hold the gridbox values
-
-public:
+	
+	public:
 	TicTacToe(); //Default Constructor Declaration
 	~TicTacToe();// Default Destructor Declaration
 	void reset();
