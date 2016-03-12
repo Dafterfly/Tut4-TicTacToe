@@ -12,11 +12,11 @@ private:
 public:
 	TicTacToe(); //Default Constructor Declaration
 	~TicTacToe();// Default Destructor Declaration
-	void restart();
+	void reset();
 	void makeMove(int, int, int);
 	bool move(int, int); //Move checking function prototype
 	void print();
 	int isWon();  //Return the player which one using an integer
-	void over();
+	string over();
 };
 
