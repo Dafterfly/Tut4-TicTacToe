@@ -29,12 +29,28 @@ TicTacToe::~TicTacToe()
 {
 }
 
-void TicTacToe::print(){
-	int i, j;
+void TicTacToe::print()
+{
+	int i;
+	int j;
+
+	// print column headings
+	cout << "  ";
+	for (j = 0; j < 3; j++)
+	{
+		cout << " " <<j;
+	}
+	cout << endl;
+
 	for (i = 0; i < 3; i++){
-		for (j = 0; j < 3; j++){
-			cout <<" "<< gameBoard[i][j];
-		}
+		for (int j = 0; j < 3; j++)
+			if (j==0)
+				cout << " " << i<<" " << gameBoard[i][j];
+			else
+		{
+				cout <<" "<< gameBoard[i][j];
+			}
+		
 		cout << endl;
 	}
 }
@@ -162,19 +178,14 @@ int main()
 
 	TicTacToe game = TicTacToe(); // Created game object of class TicTacToe
 
-	cout << "Welcome to TicTacToe console game" << endl;
-	cout << "To play, please enter your move in the following format: " << endl;
-	cout << " row number(0 to 2) column number(0 to 2) player number(1 or 2) " << endl;
-	cout << "Player one uses X's and Player 2 uses 0's" << endl;
+	cout << "Tic-Tac-Toe (AKA X-and-Os)" << endl;
 
-	cout << "Grid Layout: " << endl;
-	cout << "00 01 02" << endl;
-	cout << "10 11 12" << endl;
-	cout << "20 21 22" << endl;
+	game.print();
 
 	//Game loop 
+	int i;
 
-	for (int i = 0; i < 9; i++)
+	for (i = 0; i < 9; i++)
 	{
 		
 		// alternates players
@@ -187,7 +198,7 @@ int main()
 			player = 2;
 		}
 
-		cout <<"Player "<<player<< ", enter your move  " << endl;
+		cout <<"Player "<<player<< ", enter your move in the form [row][SPACE][column] or [row][ENTER][column]" << endl;
 
 		cin >> x >> y;
 
@@ -200,7 +211,7 @@ int main()
 			// restarts game if there's a winner
 			if (((game.over()).compare("Player 1") == 0) || ((game.over()).compare("Player 2") == 0))
 			{
-				cout << "End game Restart" << endl;
+				cout << "End game. Restart" << endl;
 				game.reset();
 				i = 0;
 				game.print();
@@ -213,6 +224,6 @@ int main()
 			i--; //This move didn't count so revert the counter back to previous value
 		}
 	}
-	cout << "End game" << endl;
+	cout << "End game.  Nobody won" << endl;
 	return 0;
 }
