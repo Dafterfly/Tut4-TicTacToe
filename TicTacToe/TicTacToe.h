@@ -14,16 +14,15 @@ class TicTacToe
 {
 	
 	private:
-	char gameBoard[3][3];  //Attribute to hold the gridbox values
+	char gameBoard[3][3];  //Creates a gameboard
 	
 	public:
-	TicTacToe(); //Default Constructor Declaration
-	~TicTacToe();// Default Destructor Declaration
+	TicTacToe(); 
+	~TicTacToe();
 	void reset();
 	void makeMove(int, int, int);
-	bool move(int, int); //Move checking function prototype
+	bool move(int, int); 
 	void print();
-	int isWon();  //Return the player which one using an integer
 	string over();
 };
 
